@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-function Greeting(){
+function BookList() {
   return (
-  <div className=''>
-   <h4>Hello People</h4>
-   <ul>
-    <li>
-      <a href='#'>Hello World</a>
-    </li>
-
-   </ul>
-  </div>
+    <section>
+      <Book/>
+    </section>
   );
+  
 }
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+const Book = () =>{
+  return (<article><Image></Image>
+          <Title/>
+          </article>
+  );
+};
+const Image = () => (<img src="https://images-eu.ssl-images-amazon.com/images/I/91bYsX41DVL._AC_UL600_SR600,400_.jpg" alt=""/>
+);
+
+const Title = () => <h1>Atomic Habits: The life-changing million</h1>
+ReactDom.render(<BookList/>, document.getElementById('root'));
